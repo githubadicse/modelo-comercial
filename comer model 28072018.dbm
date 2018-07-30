@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.1-beta" last-position="2095,3465" last-zoom="1"
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="2495,4020" last-zoom="1"
 	 default-owner="postgres">
 <database name="bdcomer" encoding="UTF8">
 	<role name="postgres"/>
@@ -1265,6 +1265,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="0"/>
 	</column>
 	<column name="rutadoc">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="archivos_qaliwarma">
 		<type name="varchar" length="0"/>
 	</column>
 	<constraint name="ruta_pk" type="pk-constr" table="bdcomer.filepath">
@@ -2802,6 +2805,78 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="numero_fisico"/>
+		</idxelement>
+</index>
+
+<index name="idx_requerimiento_volumen001" table="bdcomer.requerimiento_volumen_002"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_requerimiento_volumen_001"/>
+		</idxelement>
+</index>
+
+<index name="idx_id_requerimiento_volumen_002" table="bdcomer.requerimiento_volumen_002_producto"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_requerimiento_volumen_002"/>
+		</idxelement>
+</index>
+
+<index name="idx_id_requerimiento_volumen_002_producto_2" table="bdcomer.volumen_convertido_envace"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_requerimiento_volumen_002_producto"/>
+		</idxelement>
+</index>
+
+<index name="idx_id_entrega_por_item" table="bdcomer.requerimiento_volumen_001"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_entrega_por_item"/>
+		</idxelement>
+</index>
+
+<index name="idx_codigo_modular" table="bdcomer.requerimiento_volumen_001"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="codigo_modular"/>
+		</idxelement>
+</index>
+
+<index name="idx_item" table="bdcomer.entrega_por_item"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="item"/>
+		</idxelement>
+</index>
+
+<index name="idx_id_numero_entrega" table="bdcomer.entrega_por_item"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_numero_entrega"/>
+		</idxelement>
+</index>
+
+<index name="idx_id_catalogo_producto_qaliwarma" table="bdcomer.producto_por_numero_entrega"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_catalogo_producto_qaliwarma"/>
+		</idxelement>
+</index>
+
+<index name="idx_id_entregas_por_item" table="bdcomer.producto_por_numero_entrega"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="id_entregas_por_item"/>
 		</idxelement>
 </index>
 
