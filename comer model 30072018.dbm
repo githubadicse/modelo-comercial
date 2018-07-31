@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.1-beta" last-position="1308,1803" last-zoom="0.7"
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="129,3021" last-zoom="1"
 	 default-owner="postgres">
 <database name="bdcomer" encoding="UTF8">
 	<role name="postgres"/>
@@ -1597,7 +1597,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="volumen_convertido_envace">
 	<schema name="bdcomer"/>
 	<role name="postgres"/>
-	<position x="2700" y="4140"/>
+	<position x="2700" y="4180"/>
 	<column name="id_volumen_convertido_envace" not-null="true">
 		<type name="varchar" length="0"/>
 	</column>
@@ -1630,12 +1630,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="fecha_calculo_sys">
 		<type name="date" length="0"/>
-	</column>
-	<column name="numero_entrega">
-		<type name="integer" length="0"/>
-	</column>
-	<column name="anno">
-		<type name="integer" length="0"/>
 	</column>
 	<constraint name="pk_id_volumen_convertido_envace" type="pk-constr" table="bdcomer.volumen_convertido_envace">
 		<columns names="id_volumen_convertido_envace" ref-type="src-columns"/>
@@ -2907,38 +2901,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="id_volumen_convertido_envace"/>
-		</idxelement>
-</index>
-
-<index name="idx_id_catalogo_lote_piking" table="bdcomer.piking"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
-	 index-type="btree" factor="0">
-		<idxelement use-sorting="false">
-			<column name="id_catalogo_lote"/>
-		</idxelement>
-</index>
-
-<index name="idx_id_requerimiento_volumen_001_guia001" table="bdcomer.guia_remision_001"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
-	 index-type="btree" factor="0">
-		<idxelement use-sorting="false">
-			<column name="id_requerimiento_volumen_001"/>
-		</idxelement>
-</index>
-
-<index name="idxguia_remision_002_guia_001" table="bdcomer.guia_remision_002"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
-	 index-type="btree" factor="0">
-		<idxelement use-sorting="false">
-			<column name="id_guia_remision_001"/>
-		</idxelement>
-</index>
-
-<index name="idx_id_volumen_convertido_envace_gui002" table="bdcomer.guia_remision_002"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
-	 index-type="btree" factor="0">
-		<idxelement use-sorting="false">
-			<column name="id_guia_remision_002"/>
 		</idxelement>
 </index>
 
@@ -4421,11 +4383,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <relationship name="rel_piking_volumen_convertido_envace" type="relfk"
 	 src-table="bdcomer.piking"
 	 dst-table="bdcomer.volumen_convertido_envace"
-	 src-required="false" dst-required="false">
-	<label ref-type="dst-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
+	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_catalogo_multiplicar_nivel_educacion_nivel_educacion" type="relfk"
 	 src-table="bdcomer.catalogo_multiplicar_nivel_educacion"
