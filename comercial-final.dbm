@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.1-beta" last-position="1307,1802" last-zoom="0.7"
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="496,2417" last-zoom="0.7"
 	 default-owner="postgres">
 <database name="bdcomer" encoding="UTF8">
 	<role name="postgres"/>
@@ -2451,6 +2451,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id_vehiculo">
 		<type name="integer" length="0"/>
 	</column>
+	<column name="id_transportista">
+		<type name="integer" length="0"/>
+	</column>
 	<constraint name="ruta_distribucion_pk" type="pk-constr" table="bdcomer.ruta_distribucion">
 		<columns names="id_ruta_distribucion" ref-type="src-columns"/>
 	</constraint>
@@ -3650,6 +3653,12 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<columns names="id_chofer" ref-type="dst-columns"/>
 </constraint>
 
+<constraint name="fk_ruta_distribucion_transportista" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="bdcomer.transportista" table="bdcomer.ruta_distribucion">
+	<columns names="id_transportista" ref-type="src-columns"/>
+	<columns names="id_transportista" ref-type="dst-columns"/>
+</constraint>
+
 <constraint name="fk_ruta_distribucion_detalle_ruta_distribucion" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="bdcomer.ruta_distribucion" table="bdcomer.ruta_distribucion_detalle">
 	<columns names="id_ruta_distribucion" ref-type="src-columns"/>
@@ -4440,6 +4449,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <relationship name="rel_catalogo_multiplicar_nivel_educacion_catalogo_producto_qali" type="relfk"
 	 src-table="bdcomer.catalogo_multiplicar_nivel_educacion"
 	 dst-table="bdcomer.catalogo_producto_qaliwarma"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_ruta_distribucion_transportista" type="relfk"
+	 src-table="bdcomer.ruta_distribucion"
+	 dst-table="bdcomer.transportista"
 	 src-required="false" dst-required="false"/>
 
 </dbmodel>
