@@ -2454,6 +2454,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id_transportista">
 		<type name="integer" length="0"/>
 	</column>
+	<column name="fecha_distribucion">
+		<type name="date" length="0"/>
+	</column>
 	<constraint name="ruta_distribucion_pk" type="pk-constr" table="bdcomer.ruta_distribucion">
 		<columns names="id_ruta_distribucion" ref-type="src-columns"/>
 	</constraint>
